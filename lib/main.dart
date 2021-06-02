@@ -32,10 +32,11 @@ class _BallPageState extends State {
             padding: const EdgeInsets.all(16.0),
             child: TextButton(
               onPressed: () {
-                ballNumber = Random().nextInt(4);
-                print(ballNumber);
+                setState(() {
+                  ballNumber = Random().nextInt(5) + 1;
+                });
               },
-              child: Image.asset('images/ball1.png'),
+              child: Image.asset('images/ball$ballNumber.png'),
             ),
           ))
         ],
